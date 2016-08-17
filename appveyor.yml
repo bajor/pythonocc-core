@@ -69,6 +69,9 @@ test_script:
   # as an "artifact" for Appveyor. cmd.exe does't have good globbing, so
   # we'll use a simple python script.
   - python ci\move-conda-package.py
+  # then test
+  - cd test
+  - python run_tests.py 
 
 artifacts:
   # Archive the generated conda package in the ci.appveyor.com build report.
